@@ -4,7 +4,9 @@ author : welkenburg
 language : python
 
 ## description
-inputs -> [input-type] [output-name]
+transform m3u8 files / links to .ts files
+
+inputs -> [input-type] [output-name]:
 - text file with links and names separated with '#' -> 'https://mylink.something/file.m3u8#nameofthefile
 - link
 - single file
@@ -12,3 +14,4 @@ inputs -> [input-type] [output-name]
 
 outputs:
 -files with the .ts extention
+
