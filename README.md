@@ -13,5 +13,5 @@ inputs -> [input-type] [output-name]:
 - a folder
 
 outputs:
--files with the .ts extention
+- files with the .ts extention
 
