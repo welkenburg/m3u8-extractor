@@ -14,4 +14,3 @@ inputs -> [input-type] [output-name]:
 
 outputs:
 - files with the .ts extention
-
