@@ -1,1 +1,9 @@
+appV
+build
+cpp
+dist
+imgui
+olds
 __pycache__
+sources
+u8.spec
