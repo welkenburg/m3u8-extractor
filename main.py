@@ -153,7 +153,8 @@ if __name__ == "__main__":
 	# os.system('cls' if os.name=='nt' else 'clear')
 
 	if(len(sys.argv) < 2):
-		print("\nusage : u8 [-options] [file(s)]")
+		print("usage : u8 [-options] [file(s)]")
+		options.get("-h").activate()
 		sys.exit()
 
 	sys.argv.pop(0) # remove command name
