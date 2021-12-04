@@ -1,8 +1,9 @@
 # m3u8 extractor
 author : welkenburg
-language : python
-transform m3u8 files / links to .ts files
 
+language : python
+
+transform m3u8 files / links to .ts files
 
 ```
 usage : u8 [-options] [file(s)]
@@ -16,5 +17,8 @@ usage : u8 [-options] [file(s)]
 ```
 
 eg.
-`u8 -v sources` will convert the playlist files in the folder `sources` and save the converted file in the `video` folder. Verbose mode is activated (`-v`) so loading bars will display to show the progress.
+1. `u8 -v sources` will convert the playlist files in the folder `sources` and save the converted file in the `video` folder. Verbose mode is activated (`-v`) so loading bars will display to show the progress.
+
+2. `u8 -n touhou -o touhou-episodes sources` will convert files in the `sources` folder, and will rename every file by a name begining with `touhou` + a number. Theses files will be saved in a `touhou-episodes` folder. If this one doesn't exist yet, the program will create a new folder and rename it appropriately.
+
 **! Warning ! Loading bars are not pretty in linux**
