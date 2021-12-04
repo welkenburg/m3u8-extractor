@@ -1,9 +1,15 @@
 import os
 import sys
-import requests
 import concurrent.futures
 import time
 import platform
+
+try:
+	import requests
+except:
+	os.system('pip install requests')
+	os.system('cls' if os.name=='nt' else 'clear')
+	import requests
 
 from options import *
 if platform.system() == "Windows":
@@ -144,7 +150,7 @@ if __name__ == "__main__":
 
 	# init the clock and clear the screen
 	timer = time.perf_counter()
-	os.system('cls' if os.name=='nt' else 'clear')
+	# os.system('cls' if os.name=='nt' else 'clear')
 
 	if(len(sys.argv) < 2):
 		print("\nusage : u8 [-options] [file(s)]")
