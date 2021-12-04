@@ -3,9 +3,11 @@ import sys
 import requests
 import concurrent.futures
 import time
+import platform
 
-# from progressbar import *
 from options import *
+if platform.system() == "Windows":
+	from progressbar import *
 
 class m3u8:
 	def __init__(self,file,name,date = None):
@@ -48,7 +50,11 @@ class m3u8:
 					r = requests.get(self.urls[i], stream=True)
 					for chunk in r.iter_content(chunk_size=1024):
 						if chunk:
-							f.write(chunk)
+							try:
+								f.write(chunk)
+							except:
+								self.printf(f'cannot write to file {self.finalName[20:]}')
+								return 0 # connection issue or idk pakage loss ?
 				except:
 					self.printf(f'Failed to download {self.finalName[20:]} -> connection error ?')
 					return 0 # connection issue or idk pakage loss ?
@@ -56,10 +62,11 @@ class m3u8:
 		return 1
 
 	def printf(self,message):
-		# c = queryMousePosition()		# get cursor position
-		# move(self.id + 1, 0)			# move cursor to wanted position
-		# addstr(message)				 # prints wanted text
-		# move(c.y, c.x)				  # and go back to the previous cursor position
+		if platform.system() == "Windows":
+			c = queryMousePosition()		# get cursor position
+			move(self.id + 1, 0)			# move cursor to wanted position
+			addstr(message)				 # prints wanted text
+			move(c.y, c.x)				  # and go back to the previous cursor position
 		print(message)
 
 
